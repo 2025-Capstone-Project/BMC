@@ -90,7 +90,7 @@ def print_system_info():
     print(f"CPU 모델: {cpuinfo.get_cpu_info()['brand_raw']}")
     print(f"코어 수: {psutil.cpu_count(logical=False)} (물리적), {psutil.cpu_count(logical=True)} (논리적)")
     print(f"CPU 사용률: {psutil.cpu_percent()}%")
-    print(f"CPU 온도: {get_cpu_temperature()}")
+    print(f"CPU 온도: {get_cpu_info()}")
     
     # RAM 정보
     print("\n[RAM 정보]")
