@@ -5,7 +5,7 @@ import platform
 import os
 
 # CPU 정보
-def get_cpu_temperature():
+def get_cpu_info():
     os_type = platform.system()
     
     if os_type == 'Linux':
