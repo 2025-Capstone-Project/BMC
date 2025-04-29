@@ -18,7 +18,7 @@ def get_cpu_info():
                         temp = float(f.read().strip()) / 1000.0  # 밀리섭씨 -> 섭씨
                         temps.append(temp)
             if temps:
-                return sum(temps) / len(temps)  # 평균 온도 반환
+                return round(sum(temps) / len(temps) ,2)  # 평균 온도 반환
             return "온도 정보를 찾을 수 없습니다."
         except:
             return "Linux 온도 정보 접근 실패"
@@ -90,7 +90,7 @@ def print_system_info():
     print(f"CPU 모델: {cpuinfo.get_cpu_info()['brand_raw']}")
     print(f"코어 수: {psutil.cpu_count(logical=False)} (물리적), {psutil.cpu_count(logical=True)} (논리적)")
     print(f"CPU 사용률: {psutil.cpu_percent()}%")
-    print(f"CPU 온도: {get_cpu_info()}")
+    print(f"CPU 온도: {get_cpu_info()}°C")
     
     # RAM 정보
     print("\n[RAM 정보]")
